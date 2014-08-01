@@ -1,0 +1,78 @@
+.view {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.world {
+	position: absolute;
+	z-index: 0;
+	left: 0%;
+	top: 0%;
+	width: 500%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.menu {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	top: 20%;
+	width: 200px; 
+	margin-left: -100px;
+}
+.controls {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	bottom: 10%;
+	width: 200px; 
+	margin-left: -100px;
+}
+.sky {
+	position: absolute;
+	z-index: 0;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 60%;
+	background: #c9dbe9;
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);  
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+.hills_far {
+	position: absolute;
+	z-index: 1;
+	left: 0%;
+	top: 20%;
+	width: 100%;
+	height: 80%;
+}
+
+.hills_near {
+	position: absolute;
+	z-index: 2;
+	left: 0%;
+	top: 30%;
+	width: 100%;
+	height: 70%;
+}
+.wall {
+	position: absolute;
+	z-index: 3;
+	width: 2%;
+	background: #000000;
+}
+.flappy {
+	position: absolute;
+	z-index: 4;
+	width: 2%;
+	height: 10%;
+}
+

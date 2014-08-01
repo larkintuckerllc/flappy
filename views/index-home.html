@@ -1,0 +1,76 @@
+<div class="view">
+	<div class="world" style="left: {{world.left}}%">
+		<div class="sky"></div>
+		<svg class="hills_far" viewBox="0 0 100 100" preserveAspectRatio="none">
+			<path d="m0,40c13.80833,-0.2 15.26067,-21.96718 25.39375,-19.82187c10.13308,2.14531 6.31498,26.65391 14.7248,12.26524c8.40983,-14.38867 22.29759,12.82539 29.34238,-1.86836c14.08958,-29.3875 8.62239,9.425 30.53906,9.425l0,60l-100,0l0,-60z" stroke-width="0" stroke="#d4ffaa" fill="#d4ffaa"/>
+		</svg>
+		<svg class="hills_near" viewBox="0 0 100 100" preserveAspectRatio="none">            
+			<path fill="#00ff00" stroke="#00ff00" stroke-width="0" d="m31.64375,42.17813c10.20338,-1.12031 13.56327,-7.35234 26.95565,-6.64804c13.39238,0.7043 8.81726,4.59491 41.4006,4.46991l0,60l-100,0l0,-60c16.13125,-0.77396 11.23699,4.41875 31.64375,2.17813z"/>
+		</svg>
+		<svg class="flappy" viewBox="0 0 100 100" preserveAspectRatio="none" style="left: {{flappy.x}}%; top: {{flappy.y}}%;">            
+			<ellipse ry="47.125" rx="47.125" id="svg_1" cy="50.375" cx="50.125" stroke-width="5" stroke="#000000" fill="#ffff00"/>
+		</svg>
+		<div class="wall" style="left: {{walls[0].x}}%; top: {{100 - walls[0].height}}%; height: {{walls[0].height}}%"></div>
+		<div class="wall" style="left: {{walls[1].x}}%; top: {{100 - walls[1].height}}%; height: {{walls[1].height}}%"></div>
+		<div class="wall" style="left: {{walls[2].x}}%; top: {{100 - walls[2].height}}%; height: {{walls[2].height}}%"></div>
+	</div>
+	<div ng-if="state == 'begin'" class="menu">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<table style="width: 100%">
+					<tr>
+						<td style="text-align: center; vertical-align: middle; width: 100%;">
+							<strong>Flappy</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="panel-body">
+				<div class="text-center">
+					<button ng-click="goPlay()" type="button" class="btn btn-default">Play</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="state == 'play'" class="controls">
+		<div class="text-center">
+			<button ng-click="flappy.flap();" type="button" class="btn btn-default">Flap</button>	
+		</div>
+	</div>
+	<div ng-if="state == 'error'" class="menu">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<table style="width: 100%">
+					<tr>
+						<td style="text-align: center; vertical-align: middle; width: 100%;">
+							<strong>Error</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="panel-body">
+				<div class="text-center">
+					<button ng-click="goBegin()" type="button" class="btn btn-default">Begin Again</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="state == 'success'" class="menu">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<table style="width: 100%">
+					<tr>
+						<td style="text-align: center; vertical-align: middle; width: 100%;">
+							<strong>Success</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="panel-body">
+				<div class="text-center">
+					<button ng-click="goBegin()" type="button" class="btn btn-default">Begin Again</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
